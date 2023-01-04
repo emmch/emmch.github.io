@@ -15,16 +15,19 @@ var data_template = [
     id: "staff",
     name: "Members of Staff",
     video: "movies/2.Enter-Who.mp4",
-
     subMenu: [
       {
         id: "arne",
         name: "Arne Jönsson",
         video: "movies/3.Enter-Arne.mp4",
+        qrcode: () => QRCode.toCanvas(document.getElementById('qrcanvas'), 'https://emmch.github.io/mobile-interface.github.io/', function (error) {
+          if (error) console.error(error)
+          console.log('success!');
+        }),
         subMenu: [
           {
             id: "mobileGuide",
-            name: "mobileGuide",
+            name: "Scan QR for Mobile",
             video: "movies/4.Enter-Transfer_Mobile.mp4",
           },
         ]
@@ -33,6 +36,10 @@ var data_template = [
         id: "patrick",
         name: "Patrick Doherty",
         video: "movies/0.Not_Available.mp4",
+        qrcode: () => QRCode.toCanvas(document.getElementById('qrcanvas'), 'https://www.duckduckgo.com', function (error) {
+          if (error) console.error(error)
+          console.log('success!');
+        }),
       },
       {
         id: "tom",
@@ -77,12 +84,12 @@ var data_template = [
   {
     id: "research",
     name: "Research at HCS",
-    video: "movies/1.Enter-Hello.mp4",
+    video: ["movies/1.Enter-Hello.mp4", "movies/4.Enter-Transfer_Mobile.mp4"],
     subMenu: [
       {
         id: "home",
         name: "Home",
-        video: "movies/1.Enter-Hello.mp4",
+        video: ["movies/1.Enter-Hello.mp4", "movies/4.Enter-Transfer_Mobile.mp4"],
       },
     ],
   },
@@ -160,14 +167,40 @@ function showPathMenu () {
     node.innerHTML = index !== activePathMenu.length-1 ? apm + " >" : apm;
     myNode.appendChild(node)
   });
-  
+
 }
 
+function playNextVideo(videoLinks) {
+  // Check if there are more videos to play
+  if (videoLinks.length > 0) {
+    console.log('video links', videoLinks);
+    // Get the next video link
+    const nextVideoLink = videoLinks.shift();
+    console.log('next video link', videoLinks);
+    // Create a new video element
+    const video = document.getElementById("videoRefDOM");
+
+    // Set the video source and autoplay attributes
+    video.src = nextVideoLink;
+    video.autoplay = true;
+
+    // Append the video element to the container
+    // videoContainer.appendChild(video);
+
+    // Add an event listener to play the next video when the current one ends
+    video.addEventListener('ended', () => playNextVideo(videoLinks));
+  }
+}
 
 function loadVideo(videoLink) {
   // Set dom video
   console.log("src", videoLink);
-  document.getElementById("videoRefDOM").src = videoLink;
+  if(Array.isArray(videoLink)) {
+    console.log('Reach array status')
+    playNextVideo(videoLink)
+  } else {
+    document.getElementById("videoRefDOM").src = videoLink;
+  }
 }
 
 function application() {
@@ -205,6 +238,12 @@ function application() {
         if (index.id === activeMenu) {
           // We found the node here! We update the DOM and break out of recursion!
           loadVideo(index.video);
+
+          // Do we have a qr code?
+          if (!!index.qrcode) {
+            document.getElementById("qrcanvas").style.display = "block";
+            index.qrcode();
+          }
           clearMenu();
           var divRef = document.getElementById("menuContent");
           if (index && index.subMenu) {
@@ -240,6 +279,7 @@ function application() {
   } else {
     loadVideo(data_template.find((i) => i.id === "intro").video);
     document.getElementById("goBack").style.display = "none";
+    document.getElementById("qrcanvas").style.display = "none";
   }
 
   function addItem(ref, buttonLabel, id) {
