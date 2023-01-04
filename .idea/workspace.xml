@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82c9a12c-ce42-4377-a481-4a57fb511788" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies/0.Not_Available.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies/1.Enter-Hello.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies/2.Enter-Who.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies/3.Enter-Arne.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies/4.Enter-Transfer_Mobile.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies/mobile/5.Mobile-Hand.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies/mobile/6.Mobile-directions_Meeting.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies/mobile/7.Mobile-Meeting.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies/mobile/8.Mobile-Wait_Fika.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies/mobile/9.Mobile-transfer_fika.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies/mobile/9b.Mobile-come_back.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,13 +20,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/emmch14/Documents/GitHub/emmch.github.io"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/emmch14/Documents/GitHub/emmch.github.io&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\emmch14\Documents\GitHub\emmch.github.io" />
