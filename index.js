@@ -19,7 +19,7 @@ var data_template = [
       {
         id: "arne",
         name: "Arne Jönsson",
-        video: "movies/3.Enter-Arne.mp4",
+        video: ["movies/3.Enter-Arne.mp4", "movies/4.Enter-Transfer_Mobile.mp4"],
         qrcode: () => QRCode.toCanvas(document.getElementById('qrcanvas'), 'https://emmch.github.io/mobile-interface.github.io/', function (error) {
           if (error) console.error(error)
           console.log('success!');
@@ -89,7 +89,7 @@ var data_template = [
       {
         id: "home",
         name: "Home",
-        video: ["movies/1.Enter-Hello.mp4", "movies/4.Enter-Transfer_Mobile.mp4"],
+        video: "movies/1.Enter-Hello.mp4",
       },
     ],
   },
